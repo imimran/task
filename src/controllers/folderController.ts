@@ -2,6 +2,7 @@ import path from "path";
 import { NextFunction, Request, Response } from "express";
 import fs from "fs";
 import logger from "../logger";
+import Folder from "../models/folder";
 
 const storage = path.join(__dirname, "/../uploads");
 
@@ -9,12 +10,12 @@ logger.info(storage);
 
 const createFolder = async (req: Request, res: Response) => {
   try {
-    let { dir, path } = req.body;
+    let { folderName, folderPath } = req.body;
 
     let queryPath = storage;
 
-    if (dir) {
-      queryPath += "/" + (path && path !== "" ? path + "/" : "") + dir;
+    if (folderName) {
+      queryPath += "/" + (folderPath && folderPath !== "" ? folderPath + "/" : "") + folderName;
     }
     
     //create or check exist
@@ -22,6 +23,11 @@ const createFolder = async (req: Request, res: Response) => {
       fs.mkdirSync(queryPath, {
         recursive: true,
       });
+      const newFolder =  new Folder({
+        folderName,
+        folderPath: "/" + (folderPath && folderPath !== "" ? folderPath + "/" : "") + folderName
+      })
+      await newFolder.save()
       return res.json({ msg: "Folder Create Successfully" });
     } else {
       return res.json({ msg: "Folder already exist" });
