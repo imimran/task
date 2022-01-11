@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post("/create", folderController.createFolder);
 router.delete("/remove", folderController.removeFolder);
+router.get("/all", folderController.getAllFolder);
 
 export default router;
