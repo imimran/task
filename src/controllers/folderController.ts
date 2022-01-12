@@ -13,7 +13,7 @@ const getAllFiles = function (folderPath: any, arrayOfFiles: any) {
   console.log("files", files);
 
   arrayOfFiles = {
-    directories: [],
+    folderList: [],
     files: [],
   };
 
@@ -44,7 +44,7 @@ const getAllFolder = async (req: Request, res: Response) => {
     const directoryInfo = {
       currentPath: folderPath ? folderPath : "/",
       currentFullPath: queryPath,
-      info: allFiles,
+      list: allFiles,
     };
 
     res.json(directoryInfo);
