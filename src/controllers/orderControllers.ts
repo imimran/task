@@ -5,7 +5,7 @@ import OrderItems from "../models/orderItems";
 const getOrder = async (req: Request, res: Response) => {
   const orderId = req.params.orderId;
   //find order
-  const foundOrder = await Order.findOne({ _id: orderId }).populate(
+  const foundOrder = await Order.findOne({ _id: orderId }).select("-__v -createdAt -updatedAt").populate(
     "orderItems"
   );
   if (!foundOrder) {
@@ -20,16 +20,7 @@ const createOrder = async (req: Request, res: Response) => {
   console.log("body", req.body);
   let itemArr: any[];
   itemArr = [];
-  //  orderItems.map(async (item: { products: any; quantity: any }) => {
-  //   const newOrdeItem = new OrderItems({
-  //     products: item.products,
-  //     quantity: item.quantity,
-  //   });
-  //   const items = await newOrdeItem.save();
 
-  //   itemArr.push(items._id);
-  //   console.log("arr", itemArr);
-  // });
   for (let i = 0; i < orderItems.length; i++) {
     let item = orderItems[i];
     const newOrdeItem = new OrderItems({
