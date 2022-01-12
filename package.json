@@ -1,7 +1,7 @@
 {
   "name": "task",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
   "repository": "https://github.com/imimran/task.git",
   "author": "imimran <engr.aih@gmail.com>",
   "license": "MIT",
