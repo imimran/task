@@ -1,5 +1,11 @@
 # task
 
+//.env
+PORT=5000
+MONGO_URL=mongodb+srv://imimran:12345@cluster0.yuvqm.mongodb.net/task?retryWrites=true&w=majority
+
+
+
 Get Order details:
 
 Get: http://127.0.0.1:5000/api/v1/order/61de77f9b0f0ec295a90e5cb
