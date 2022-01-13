@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "61e020c1d450bdc6d9b5377f"
+  },
+  "folderName": "document",
+  "folderPath": "/document",
+  "createdAt": {
+    "$date": "2022-01-13T12:53:21.710Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:53:21.710Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e020d7d450bdc6d9b53781"
+  },
+  "folderName": "document",
+  "folderPath": "/important/document",
+  "createdAt": {
+    "$date": "2022-01-13T12:53:43.920Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:53:43.920Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e020f6d450bdc6d9b53783"
+  },
+  "folderName": "picture",
+  "folderPath": "/important/picture",
+  "createdAt": {
+    "$date": "2022-01-13T12:54:14.956Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:54:14.956Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e020ffd450bdc6d9b53785"
+  },
+  "folderName": "picture",
+  "folderPath": "/important/doc/picture",
+  "createdAt": {
+    "$date": "2022-01-13T12:54:23.414Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:54:23.414Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0210dd450bdc6d9b53787"
+  },
+  "folderName": "picture",
+  "folderPath": "/important/doc/photo/picture",
+  "createdAt": {
+    "$date": "2022-01-13T12:54:37.700Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:54:37.700Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0215cd450bdc6d9b53789"
+  },
+  "folderName": "music",
+  "folderPath": "/music",
+  "createdAt": {
+    "$date": "2022-01-13T12:55:56.230Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:55:56.230Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e02166d450bdc6d9b5378b"
+  },
+  "folderName": "music",
+  "folderPath": "/bangla/music",
+  "createdAt": {
+    "$date": "2022-01-13T12:56:06.357Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:56:06.357Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0216ed450bdc6d9b5378d"
+  },
+  "folderName": "music",
+  "folderPath": "/bangla/song/music",
+  "createdAt": {
+    "$date": "2022-01-13T12:56:14.294Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T12:56:14.294Z"
+  },
+  "__v": 0
+}]

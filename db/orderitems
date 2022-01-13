@@ -1,0 +1,131 @@
+[{
+  "_id": {
+    "$oid": "61de77f9b0f0ec295a90e5c7"
+  },
+  "products": "Orange",
+  "quantity": 3,
+  "createdAt": {
+    "$date": "2022-01-12T06:40:57.463Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-12T06:40:57.463Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61de77f9b0f0ec295a90e5c9"
+  },
+  "products": "Banana",
+  "quantity": 2,
+  "createdAt": {
+    "$date": "2022-01-12T06:40:57.512Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-12T06:40:57.512Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dec0c93000cc80026ade5a"
+  },
+  "products": "Orange",
+  "quantity": 3,
+  "createdAt": {
+    "$date": "2022-01-12T11:51:37.807Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-12T11:51:37.807Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61dec0c93000cc80026ade5c"
+  },
+  "products": "Banana",
+  "quantity": 2,
+  "createdAt": {
+    "$date": "2022-01-12T11:51:37.884Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-12T11:51:37.884Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0237bd450bdc6d9b5378f"
+  },
+  "products": "Apppel",
+  "quantity": 3,
+  "createdAt": {
+    "$date": "2022-01-13T13:04:59.783Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:04:59.783Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0237bd450bdc6d9b53791"
+  },
+  "products": "Orange",
+  "quantity": 2,
+  "createdAt": {
+    "$date": "2022-01-13T13:04:59.871Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:04:59.871Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e023a6d450bdc6d9b53795"
+  },
+  "products": "Phone",
+  "quantity": 3,
+  "createdAt": {
+    "$date": "2022-01-13T13:05:42.818Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:05:42.818Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e023a6d450bdc6d9b53797"
+  },
+  "products": "Telephone",
+  "quantity": 2,
+  "createdAt": {
+    "$date": "2022-01-13T13:05:42.899Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:05:42.899Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0258e8226a1cda782e71a"
+  },
+  "products": "Phone",
+  "quantity": 3,
+  "createdAt": {
+    "$date": "2022-01-13T13:13:50.202Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:13:50.202Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61e0258e8226a1cda782e71c"
+  },
+  "products": "Telephone",
+  "quantity": 2,
+  "createdAt": {
+    "$date": "2022-01-13T13:13:50.293Z"
+  },
+  "updatedAt": {
+    "$date": "2022-01-13T13:13:50.293Z"
+  },
+  "__v": 0
+}]
