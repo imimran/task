@@ -84,10 +84,14 @@ const createFolder = async (req: Request, res: Response) => {
           folderName,
           folderPath: "/" + folderName,
           folderType: "root",
-          node: "0",
+          parent: "0",
         });
         await rootFolder.save();
       } else {
+
+        const foundParent = await Folder.findOne({
+          folderPath: "/" + folderPath,
+        });
         const newFolder = new Folder({
           folderName,
           folderPath:
@@ -95,9 +99,9 @@ const createFolder = async (req: Request, res: Response) => {
             (folderPath && folderPath !== "" ? folderPath + "/" : "") +
             folderName,
           folderType: "child",
-          node: "0",
+          parent: foundParent && foundParent._id,
         });
-        await newFolder.save();
+        const newChild = await newFolder.save();
 
         const foundFolderPath = await Folder.findOne({
           folderPath: "/" + folderPath,
@@ -105,7 +109,7 @@ const createFolder = async (req: Request, res: Response) => {
         if (foundFolderPath)
           await Folder.findOneAndUpdate(
             { _id: foundFolderPath._id },
-            { node: "x" },
+            {$push: {child: newChild._id} },
             {
               new: true,
             }
