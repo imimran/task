@@ -1,5 +1,13 @@
 # task
 
+
+Update functionality:
+create root & child folder
+root folder can not be deleted
+if delete a folder, delete from database also
+you can know from db- folder empty or not
+
+
 //.env
 PORT=5000
 MONGO_URL=mongodb+srv://imimran:12345@cluster0.yuvqm.mongodb.net/task?retryWrites=true&w=majority

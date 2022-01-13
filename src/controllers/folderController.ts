@@ -55,8 +55,7 @@ const getAllFolder = async (req: Request, res: Response) => {
   return;
 };
 
-
-//create folder 
+//create folder
 const createFolder = async (req: Request, res: Response) => {
   try {
     let { folderName, folderPath } = req.body;
@@ -75,14 +74,44 @@ const createFolder = async (req: Request, res: Response) => {
       fs.mkdirSync(queryPath, {
         recursive: true,
       });
-      const newFolder = new Folder({
-        folderName,
-        folderPath:
-          "/" +
-          (folderPath && folderPath !== "" ? folderPath + "/" : "") +
+
+      if (!folderPath) {
+        const foundRootFolder = await Folder.findOne({ folderType: "root" });
+        if (foundRootFolder) {
+          return res.json({ msg: "Already have a root folder" });
+        }
+        const rootFolder = new Folder({
           folderName,
-      });
-      await newFolder.save();
+          folderPath: "/" + folderName,
+          folderType: "root",
+          node: "0",
+        });
+        await rootFolder.save();
+      } else {
+        const newFolder = new Folder({
+          folderName,
+          folderPath:
+            "/" +
+            (folderPath && folderPath !== "" ? folderPath + "/" : "") +
+            folderName,
+          folderType: "child",
+          node: "0",
+        });
+        await newFolder.save();
+
+        const foundFolderPath = await Folder.findOne({
+          folderPath: "/" + folderPath,
+        });
+        if (foundFolderPath)
+          await Folder.findOneAndUpdate(
+            { _id: foundFolderPath._id },
+            { node: "x" },
+            {
+              new: true,
+            }
+          );
+      }
+
       return res.json({ msg: "Folder Create Successfully" });
     } else {
       return res.json({ msg: "Folder already exist" });
@@ -122,6 +151,24 @@ const removeFolder = async (req: Request, res: Response) => {
   try {
     let { folder } = req.body;
     const removeStorage = storage + "/" + folder;
+
+    const foundFolderPath = await Folder.findOne({
+      folderPath: "/" + folder,
+    });
+
+    if (foundFolderPath) {
+      const isRootFolder = await Folder.findOne({
+        _id: foundFolderPath._id,
+        folderType: "root",
+      });
+      if (isRootFolder) {
+        return res.json({ msg: "Root folder can not be deleted" });
+      }
+    }
+
+    if (foundFolderPath) {
+      await Folder.findByIdAndRemove({ _id: foundFolderPath._id });
+    }
 
     removeDir(removeStorage);
     return res
