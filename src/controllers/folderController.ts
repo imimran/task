@@ -85,6 +85,7 @@ const createFolder = async (req: Request, res: Response) => {
           folderPath: "/" + folderName,
           folderType: "root",
           parent: "0",
+          child: 0
         });
         await rootFolder.save();
       } else {
@@ -100,6 +101,7 @@ const createFolder = async (req: Request, res: Response) => {
             folderName,
           folderType: "child",
           parent: foundParent && foundParent._id,
+          child: 0
         });
         const newChild = await newFolder.save();
 
@@ -109,7 +111,7 @@ const createFolder = async (req: Request, res: Response) => {
         if (foundFolderPath)
           await Folder.findOneAndUpdate(
             { _id: foundFolderPath._id },
-            {$push: {child: newChild._id} },
+            {$inc: {child: 1} },
             {
               new: true,
             }

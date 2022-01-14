@@ -5,7 +5,7 @@ interface IFolderModel {
   folderPath?: string;
   folderType: string;
   parent: string;
-  child?: string[];
+  child: number;
 }
 export interface IFDocument extends IFolderModel, Document {}
 
@@ -28,8 +28,8 @@ const FolderSchema = new Schema<IFolderModel>(
       required: true,
     },
     child: {
-      type: [String],
-      required: false,
+      type: Number,
+      required: true,
     },
 
   },
